@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FALKAN - Redirecting...</title>
+  <script>
+    // SPA 404 client-side redirect fallback
+    var pathSegmentsToKeep = 0;
+    var l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/') +
+      (l.search ? '&' + l.search.slice(1) : '') +
+      l.hash
+    );
+  </script>
+</head>
+<body>
+  <div style="display:flex; justify-content:center; align-items:center; height:100vh; background-color:#030712; color:#94a3b8; font-family:sans-serif;">
+    <p>Redirecting to FALKAN trading arena...</p>
+  </div>
+</body>
+</html>
